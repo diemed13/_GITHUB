@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Mvc.Models.LivroView>
+@{ ViewBag.Title = "Cadastro de Livros"; }
+<h2>@ViewBag.Title</h2>
+
+
+<div class="row">
+    <div class="form-inline">
+        <div class="col-sm-3 col-md-2 text-left">
+            <a href="@Url.Action("AddOrEdit", "Livro")" class="btn btn-primary">Adicionar Livro</a>
+        </div>
+
+
+        @using (Html.BeginForm("Pesquisar", "Livro"))
+        {
+            <div class="col-sm-7 col-md-8 form-group text-right">
+                <input type="text" name="pesquisa" class="form-control" placeholder="digite sua pesquisa">
+            </div>
+            <input type="submit" value="Pesquisar" class="btn btn-primary mb-2" />
+        }
+
+    </div>
+
+</div>
+<br />
+
+<table class="table table-striped">
+    <thead class="table-bordered">
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.Titulo) </th>
+            <th> @Html.DisplayNameFor(model => model.Descricao) </th>
+            <th> @Html.DisplayNameFor(model => model.Genero) </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.Titulo) </td>
+            <td> @Html.DisplayFor(modelItem => item.Descricao) </td>
+            <td> @Html.DisplayFor(modelItem => item.Genero) </td>
+            <td>
+                <a href="@Url.Action("AddOrEdit", "Livro", new { id = item.Id })" class="btn btn-primary btn-sm">Editar</a>
+                <a onclick="Delete(@item.Id)" class="btn btn-danger btn-sm">Remover</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+@section scripts {
+    <script type="text/javascript">
+            $(function ()
+            {
+                var msg = '@TempData["Mensagem"]';
+                if (msg != '') alert(msg);
+            });
+    </script>
+}

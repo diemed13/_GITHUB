@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Mvc.Models.ClienteView>
+
+@{
+    ViewBag.Title = "Cadastro de Clientes";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-sm-5">
+        <a href="@Url.Action("AddOrEdit", "Cliente")" class="btn btn-primary">Adicionar Cliente</a>
+    </div>
+</div>
+<br />
+
+<table class="table table-striped">
+    <thead class="table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                <a href="@Url.Action("AddOrEdit", "Cliente", new { id = item.Id })" class="btn btn-primary btn-sm">Editar</a>
+                <a onclick="Delete(@item.Id)" class="btn btn-danger btn-sm">Remover</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@section scripts {
+    <script type="text/javascript">
+            $(function ()
+            {
+                var msg = '@TempData["Mensagem"]';
+                if (msg != '') alert(msg);
+            });
+    </script>
+}
+

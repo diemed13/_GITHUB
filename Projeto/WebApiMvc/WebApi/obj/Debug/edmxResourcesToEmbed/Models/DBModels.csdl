@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SARAIVAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="Cliente" EntityType="SARAIVAModel.Cliente" />
+    <EntitySet Name="Livro" EntityType="SARAIVAModel.Livro" />
+    <EntitySet Name="Locacao" EntityType="SARAIVAModel.Locacao" />
+    <AssociationSet Name="FK_Locacao_Clientes" Association="SARAIVAModel.FK_Locacao_Clientes">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Locacao" EntitySet="Locacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locacao_Livros1" Association="SARAIVAModel.FK_Locacao_Livros1">
+      <End Role="Livro" EntitySet="Livro" />
+      <End Role="Locacao" EntitySet="Locacao" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Livro">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descricao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Genero" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Locacao" Relationship="SARAIVAModel.FK_Locacao_Livros1" FromRole="Livro" ToRole="Locacao" />
+  </EntityType>
+  <EntityType Name="Locacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataLocacao" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Cliente" Relationship="SARAIVAModel.FK_Locacao_Clientes" FromRole="Locacao" ToRole="Cliente" />
+    <NavigationProperty Name="Livro" Relationship="SARAIVAModel.FK_Locacao_Livros1" FromRole="Locacao" ToRole="Livro" />
+  </EntityType>
+  <Association Name="FK_Locacao_Clientes">
+    <End Type="SARAIVAModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="SARAIVAModel.Locacao" Role="Locacao" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Locacao_Livros1">
+    <End Type="SARAIVAModel.Livro" Role="Livro" Multiplicity="1" />
+    <End Type="SARAIVAModel.Locacao" Role="Locacao" Multiplicity="*" />
+  </Association>
+</Schema>

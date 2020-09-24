@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SARAIVAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Livro">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar" MaxLength="500" />
+    <Property Name="Genero" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdLivro" Type="int" Nullable="false" />
+    <Property Name="DataLocacao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Locacao_Clientes">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Locacao" Type="Self.Locacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Locacao">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locacao_Livros1">
+    <End Role="Livro" Type="Self.Livro" Multiplicity="1" />
+    <End Role="Locacao" Type="Self.Locacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Livro">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Locacao">
+        <PropertyRef Name="IdLivro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SARAIVAModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Livro" EntityType="Self.Livro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locacao" EntityType="Self.Locacao" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Locacao_Clientes" Association="Self.FK_Locacao_Clientes">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Locacao" EntitySet="Locacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locacao_Livros1" Association="Self.FK_Locacao_Livros1">
+      <End Role="Livro" EntitySet="Livro" />
+      <End Role="Locacao" EntitySet="Locacao" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
