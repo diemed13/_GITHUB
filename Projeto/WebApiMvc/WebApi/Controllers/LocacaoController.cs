@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi.Models;
@@ -26,7 +23,9 @@ namespace WebApi.Controllers
         [ResponseType(typeof(Locacao))]
         public IHttpActionResult GetLocacao(int id)
         {
-            Locacao locacao = db.Locacao.Find(id);
+            //Locacao locacao = db.Locacao.Find(id);
+            Locacao locacao = db.Locacao.Where(x => x.IdLivro.Equals(id)).FirstOrDefault();
+
             if (locacao == null)
             {
                 return NotFound();
@@ -34,6 +33,7 @@ namespace WebApi.Controllers
 
             return Ok(locacao);
         }
+       
 
         // PUT: api/Locacao/5
         [ResponseType(typeof(void))]

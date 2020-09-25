@@ -12,7 +12,7 @@ namespace WebApi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Livro()
         {
-            Locacao = new HashSet<Locacao>();
+            //Locacao = new HashSet<Locacao>();
         }
 
         public int Id { get; set; }
@@ -28,8 +28,7 @@ namespace WebApi.Models
         [StringLength(30)]
         public string Genero { get; set; }
 
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Locacao> Locacao { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<Locacao> Locacao { get; set; }
     }
 }

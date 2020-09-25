@@ -10,8 +10,8 @@ namespace Mvc.Models
     {
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "O campo nome é obrigatório")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O nome precisa ter entre 3 e 50 caracteres")]
-        [Required(ErrorMessage ="O campo nome é obrigatório")]
         public string Nome { get; set; }
     }
 }

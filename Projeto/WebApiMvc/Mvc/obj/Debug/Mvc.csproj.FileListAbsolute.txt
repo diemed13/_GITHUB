@@ -54,7 +54,10 @@ C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\Antlr3.Runt
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\Microsoft.Web.Infrastructure.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\Newtonsoft.Json.dll
+C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Net.Http.Formatting.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Helpers.dll
+C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Http.dll
+C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Http.WebHost.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Mvc.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Optimization.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Razor.dll
@@ -62,6 +65,9 @@ C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.WebPages.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.WebPages.Razor.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\WebGrease.dll
+C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Net.Http.Formatting.xml
+C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Http.xml
+C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Http.WebHost.xml
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Helpers.xml
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Mvc.xml
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Web.Optimization.xml
@@ -77,5 +83,3 @@ C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\obj\Debug\Mvc.c
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\obj\Debug\Mvc.csproj.CopyComplete
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\obj\Debug\Mvc.dll
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\obj\Debug\Mvc.pdb
-C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Net.Http.Formatting.dll
-C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\Mvc\bin\System.Net.Http.Formatting.xml

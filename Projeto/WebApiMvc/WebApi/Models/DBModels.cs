@@ -19,17 +19,11 @@ namespace WebApi.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cliente>()
-                .HasMany(e => e.Locacao)
-                .WithRequired(e => e.Cliente)
-                .HasForeignKey(e => e.IdCliente)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Livro>()
-                .HasMany(e => e.Locacao)
-                .WithRequired(e => e.Livro)
-                .HasForeignKey(e => e.IdLivro)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Livro>();
+                //.HasMany(e => e.Locacao)
+                //.WithRequired(e => e.Livro)
+                //.HasForeignKey(e => e.IdLivro)
+                //.WillCascadeOnDelete(false);
         }
     }
 }

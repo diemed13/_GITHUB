@@ -1,0 +1,101 @@
+﻿@model Mvc.Models.LocacaoView
+@{
+    ViewBag.Title = "Locacao";
+}
+
+<div class="form-body">
+    <h3>Alugar Livro</h3>
+
+    @using (Html.BeginForm("Locacao", "Locacao"))
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @if (TempData["Retorno"] == null)
+            {
+                <div class="alert alert-warning">
+                    Deseja alugar o livro?
+                    <input type="submit" value="Sim" class="btn btn-default" />
+                    @Html.ActionLink("Cancelar", "Index", "Livro", null, new { @class = "btn btn-default" })
+                </div>
+            }
+        </div>
+    }
+
+
+    @if (TempData["Retorno"] != null && TempData["Retorno"] == "id-error")
+    {
+        <div class="alert alert-danger"> Não foi possível localizar o livro.</div>
+    }
+    @if (TempData["Retorno"] != null && TempData["Retorno"] == "error")
+    {
+        <div class="alert alert-danger"> Já existe uma locação ativa.</div>
+    }
+    @if (TempData["Retorno"] != null && TempData["Retorno"] == "success")
+    {
+        <div class="alert alert-success"> Locação gravada com sucesso.</div>
+    }
+
+    <div>
+        @Html.ActionLink("Voltar", "Index", "Livro")
+    </div>
+</div>
+
+
+
+
+
+
+
+@*@using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-horizontal"><hr />
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Salvar" class="btn btn-default" />
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+                </div>
+            </div>
+        </div>
+
+    }*@
+
+
+
+
+
+
+
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+    @Scripts.Render("~/bundles/jqueryglobalize");
+}

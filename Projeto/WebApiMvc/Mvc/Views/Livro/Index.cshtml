@@ -34,15 +34,17 @@
     </thead>
     @foreach (var item in Model)
     {
-        <tr>
-            <td> @Html.DisplayFor(modelItem => item.Titulo) </td>
-            <td> @Html.DisplayFor(modelItem => item.Descricao) </td>
-            <td> @Html.DisplayFor(modelItem => item.Genero) </td>
-            <td>
-                <a href="@Url.Action("AddOrEdit", "Livro", new { id = item.Id })" class="btn btn-primary btn-sm">Editar</a>
-                <a onclick="Delete(@item.Id)" class="btn btn-danger btn-sm">Remover</a>
-            </td>
-        </tr>
+<tr>
+    <td> @Html.DisplayFor(modelItem => item.Titulo) </td>
+    <td> @Html.DisplayFor(modelItem => item.Descricao) </td>
+    <td> @Html.DisplayFor(modelItem => item.Genero) </td>
+    <td>
+        <a href="@Url.Action("AddOrEdit", "Livro", new { id = item.Id })" class="btn btn-primary btn-sm">Editar</a>
+        <a onclick="Delete(@item.Id)" class="btn btn-danger btn-sm">Remover</a>
+        <a href="@Url.Action("Index", "Locacao", new { id = item.Id })" class="btn btn-primary btn-sm">Alugar</a>
+    </td>
+
+</tr>
     }
 </table>
 

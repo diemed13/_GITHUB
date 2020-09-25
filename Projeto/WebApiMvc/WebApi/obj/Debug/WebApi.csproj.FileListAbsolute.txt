@@ -82,7 +82,6 @@ C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\bin\System.W
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\bin\System.Web.WebPages.Razor.xml
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\bin\Antlr3.Runtime.pdb
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\obj\Debug\WebApi.csproj.CopyComplete
 C:\DESENVOLVIMENTO\_GITHUB Projects\Public\Projeto\WebApiMvc\WebApi\obj\Debug\WebApi.dll
